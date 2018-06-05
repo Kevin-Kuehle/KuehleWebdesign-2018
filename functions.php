@@ -1,7 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Kevin
- * Date: 03.06.2018
- * Time: 18:08
- */
+// Add Styles and Scrips
+wp_enqueue_style( 'style', get_stylesheet_uri() );
+wp_enqueue_script( 'default_script', get_template_directory_uri() . '/assets/js/app.min.js', [], '1.0', true );

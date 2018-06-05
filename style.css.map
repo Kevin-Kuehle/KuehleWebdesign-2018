@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"style.css","sourcesContent":[]}
+{"version":3,"sources":["layout/typo.scss"],"names":[],"mappings":"AAAA,KACE,wBAA0B,CAC3B","file":"style.css","sourcesContent":["body {\r\n  background-color : #e1ffe6;\r\n}"]}

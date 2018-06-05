@@ -1,7 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Kevin
- * Date: 03.06.2018
- * Time: 18:07
- */
+<?php get_header(); ?>
+    <main>
+        <h2><?php bloginfo( 'title' ); ?></h2>
+    </main>
+<?php get_footer(); ?>
