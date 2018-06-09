@@ -5,4 +5,14 @@ Author URI: www.kuehle-webdesign.de
 Description: This Theme is only for Kevin Kühle
 Version: 1.0
 */
+
+/* @TODO: Reihenfolge gut durchdacht Entwickelt. Steht noch nicht auf Done weil die Rheinfolge unklar ist. */
 @import 'layout/typo';
+@import 'layout/functions';
+@import 'layout/mixins';
+@import 'layout/breakpoints';
+
+@import 'layout/globals';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/navigations';
