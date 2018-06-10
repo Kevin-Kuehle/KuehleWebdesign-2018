@@ -10,7 +10,7 @@
 <body class="<?php body_class(); ?>">
 <header class="header">
     <div class="topBar">
-        <div class="logo icon-logo">Logo</div>
+        <div class="logo icon-logo"></div>
         <div class="menu"> <?php
 			wp_nav_menu( [
 				'menu_class'     => 'mainMenu',

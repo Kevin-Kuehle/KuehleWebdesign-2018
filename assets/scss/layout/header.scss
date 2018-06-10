@@ -2,7 +2,7 @@
   height     : 100vh;
   border     : 1px dashed #6effa1;
   position   : relative;
-  background : $color-2 url('assets/images/header/Background.jpg') bottom center / 100% no-repeat;
+  background : $color-2 url('assets/images/header/Background.jpg') top center / cover no-repeat;
 
   &:after {
     position : absolute;
@@ -15,7 +15,7 @@
   }
 
   @include breakpoint(md) {
-    background : $color-2 url('assets/images/header/Background@2x.jpg') bottom center / 100% no-repeat;
+    background : $color-2 url('assets/images/header/Background@2x.jpg') top center / cover no-repeat;
   }
 
   .topBar {
@@ -24,14 +24,16 @@
     border    : 1px dashed red;
 
     /*.logo {
-    }
-    .mainMenu {
-    }
-    .info {
-    }*/
-    .mobileMenu {
-      display : none;
+   }
+   .mainMenu {
+   }
+   .info {
+   }*/
+
+    @include breakpoint(lg) {
+      .mobileMenu {
+        display : none;
+      }
     }
   }
-
 }
