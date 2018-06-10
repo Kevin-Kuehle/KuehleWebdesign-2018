@@ -3,7 +3,6 @@ require 'inc/ThemeSupport.php';
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Add Styles and Scrips
-
 function kwd_enqueue_my_scripts_and_styles() {
 
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
@@ -11,3 +10,8 @@ function kwd_enqueue_my_scripts_and_styles() {
 }
 
 add_action( 'wp_enqueue_scripts', 'kwd_enqueue_my_scripts_and_styles' );
+
+//Menus
+function add_kwd_menus() {
+
+}

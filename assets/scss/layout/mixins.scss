@@ -1,0 +1,32 @@
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*Breakpoints*/
+$bp-context : 16px;
+$breakpoints : (
+        'xs': em(456px, $bp-context),
+        'sm': em(640px, $bp-context),
+        'md': em(752px, $bp-context),
+        'lg': em(992px, $bp-context),
+        'xl': em(1168px, $bp-context)
+);
+
+@mixin breakpoint($point) {
+
+  @if map-has-key($breakpoints, $point) {
+
+    @media (min-width : map-get($breakpoints, $point)) {
+      @content;
+    }
+  } @else {
+    @warn "The breakpoint #{$point} is not associated with a min-width.";
+  }
+}
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*Fonts*/
+@mixin mainFont {
+  font-family : $main-font-family;
+  font-weight : 300;
+}
+@mixin titleFont {
+  font-family : $title-font-family;
+  font-weight : 500;
+}
