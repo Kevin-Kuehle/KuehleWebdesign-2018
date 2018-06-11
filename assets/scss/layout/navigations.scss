@@ -1,20 +1,54 @@
 ul.mainMenu {
-  list-style      : none;
-  display         : flex;
-  flex-flow       : row nowrap;
-  justify-content : space-between;
-  max-width       : 290px;
+  display : none;
 
-  border          : 1px dashed red;
-
-  li {
-
-  }
-
+  //@include breakpoint(lg) {
+  //  list-style      : none;
+  //  display         : flex;
+  //  flex-flow       : row nowrap;
+  //  justify-content : space-between;
+  //  max-width       : 290px;
+  //}
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.mobileMenuContainer {
+  position  : fixed;
+  left      : 0;
+  top       : rem(56px);
+  transform : translateY(-200%);
+  overflow  : hidden;
+  z-index   : 199;
+  @include animation-1;
+
+  &.showme {
+    display   : flex;
+    z-index   : 200;
+    transform : translateY(0);
+    @include animation-1;
+  }
+}
 ul.mobileMenu {
-  display : none;
+  width            : 100vw;
+  display          : flex;
+  flex-flow        : column;
+  justify-content  : center;
+  align-content    : center;
+  align-items      : center;
+  background-color : rgba(0, 0, 0, 0.95);
+
+  li {
+    display         : flex;
+    align-content   : center;
+    justify-content : center;
+
+    a {
+      @include mainFont;
+      text-decoration : none;
+      font-size       : 1.3rem;
+      padding         : 0.8rem 0;
+      color           : white;
+    }
+  }
+
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ul.footerMenu {

@@ -1,34 +1,59 @@
 .header {
+  display    : Grid;
   height     : 100vh;
-  border     : 1px dashed #6effa1;
   position   : relative;
   background : $color-2 url('assets/images/header/Background.jpg') top center / cover no-repeat;
 
+  @media screen and (orientation : landscape) {
+    background : $color-2 url('assets/images/header/Background.jpg') center 33% / cover no-repeat;
+  }
+
+  // Shaddow
   &:after {
-    position : absolute;
-    left     : 0;
-    top      : 0;
-    width    : 100%;
-    height   : 45%;
-    border   : 1px dashed red;
-    z-index  : 105;
-  }
+    content    : '';
+    position   : absolute;
+    left       : 0;
+    top        : 0;
+    width      : 100%;
+    max-width  : 100vw;
+    height     : 50%;
+    z-index    : 99;
+    background : linear-gradient(0deg, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5));
 
-  @include breakpoint(md) {
-    background : $color-2 url('assets/images/header/Background@2x.jpg') top center / cover no-repeat;
   }
-
   .topBar {
-    display   : flex;
-    flex-flow : row nowrap;
-    border    : 1px dashed red;
+    position              : fixed;
+    top                   : 0;
+    left                  : 0;
+    width                 : 100vw;
+    z-index               : 300;
+    display               : grid;
+    grid-template-columns : 50% 50%;
+    grid-template-rows    : 100%;
+    grid-template-areas   : "logo mobileButton";
+    padding               : 0 0.5rem;
+    align-content         : center;
+    justify-content       : center;
+    flex-flow             : row nowrap;
+    height                : rem(56px);
+    background            : linear-gradient(90deg, #0e2633, #071824);
+    border-image          : linear-gradient(90deg, white, red);
 
-    /*.logo {
-   }
-   .mainMenu {
-   }
-   .info {
-   }*/
+    .mobileMenuButton {
+      display         : flex;
+      flex-flow       : row nowrap;
+      justify-content : flex-end;
+      align-content   : center;
+      align-items     : center;
+      min-height      : 100%;
+      width           : auto;
+      grid-area       : mobileButton;
+
+      span {
+        color     : $light;
+        font-size : 2.6rem;
+      }
+    }
 
     @include breakpoint(lg) {
       .mobileMenu {
@@ -36,4 +61,14 @@
       }
     }
   }
+
+  //  @Small:  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  @include breakpoint(sm) {
+
+  }
+  //  @Medium:  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  @include breakpoint(md) {
+    background : $color-2 url('assets/images/header/Background@2x.jpg') top center / cover no-repeat;
+  }
+
 }
