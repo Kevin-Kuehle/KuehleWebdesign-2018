@@ -8,10 +8,9 @@
 	<?php wp_head(); ?>
 </head>
 <body class="<?php body_class(); ?>">
-
 <header class="header">
     <div class="topBar">
-        <div class="logo"></div>
+        <div class="logo"><img src="<?php echo get_template_directory_uri() . '/assets/images/logos/logo_w.svg' ?>" alt="Kühle-Webdesign Logo"></div>
         <div class="menu"> <?php
 			wp_nav_menu( [
 				'menu_class'     => 'mainMenu',
@@ -24,7 +23,7 @@
             <span class="icon-view-list"></span>
         </div>
     </div>
-    <div class="mobileMenuContainer showme">
+    <div class="mobileMenuContainer">
 		<?php
 		wp_nav_menu( [
 			'menu_class'     => 'mobileMenu',
@@ -33,5 +32,24 @@
 		] );
 		?>
     </div>
-    <div class="title"><h1>Worauf warten Sie noch ? Verlieren Sie keine Zeit und lassen Sie sich Ihre eigene Webseite erstellen bei Kühle-Webdesign</h1></div>
+    <div class="infoBox">
+        <div class="claim"><h1>Kühle-Webdesign in Berlin <strong>erstellt für Ihr Unternehmen eine responsive
+                    Webseite</strong>, die Ihre Marketingstrategie wirkungsvoll unterstützt.</h1></div>
+        <div class="leistungen">
+            <ul class="greenCheck">
+                <li>item-1</li>
+                <li>item-2</li>
+                <li>item-3</li>
+                <li>item-4</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="bottomBar">
+        <div class="callToAction">
+            <div class="phone"><span class="icon-phone"></span>(030) 915 75 222</div>
+            <div class="anfrageSenden"><a class="btn btn-1" href="#"><b>Anfrage</b> Senden</a></div>
+        </div>
+        <span class="scrollDown icon-angle-double-down"></span>
+    </div>
 </header>

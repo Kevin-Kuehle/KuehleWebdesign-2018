@@ -1,4 +1,10 @@
 // Überschriften
 h1 {
-  @include titleFont;
+  @include mainFont;
+  font-size   : rem(40px);
+  line-height : rem(64px);
+
+  strong, b {
+    font-weight : 500;
+  }
 }

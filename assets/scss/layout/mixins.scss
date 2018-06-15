@@ -13,7 +13,7 @@ $breakpoints : (
 
   @if map-has-key($breakpoints, $point) {
 
-    @media (min-width : map-get($breakpoints, $point)) {
+    @media (max-width : map-get($breakpoints, $point)) {
       @content;
     }
   } @else {
@@ -30,7 +30,32 @@ $breakpoints : (
   font-family : $title-font-family;
   font-weight : 500;
 }
+@mixin menu-font-style {
+  font-family     : $main-font-family;
+  font-size       : rem(24px);
+  font-weight     : 300;
+  text-decoration : none;
+  color           : $light;
+}
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Animations
 @mixin animation-1 {
   transition : all 0.4s ease-out;
 }
+@mixin animation-2 {
+  transition : all 0.2s linear;
+}
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*Global*/
+@mixin sitePadding {
+  padding : 0 $gap;
+}
+@mixin pageWidth {
+  width        : 100%;
+  max-width    : $template-width;
+  display      : grid;
+  justify-self : center;
+  @include sitePadding;
+}
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
