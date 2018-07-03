@@ -86,5 +86,24 @@ ul.mobileMenu {
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ul.footerMenu {
+  list-style      : none;
+  display         : flex;
+  flex-flow       : row nowrap;
+  justify-items   : center;
+  justify-content : center;
 
+  li {
+    margin-right : rem(68px);
+    &:last-of-type {
+      margin-right : 0;
+    }
+
+    a {
+      color           : $light;
+      font-size       : rem(21px);
+      font-family     : $main-font-family;
+      font-weight     : 300;
+      text-decoration : none;
+    }
+  }
 }

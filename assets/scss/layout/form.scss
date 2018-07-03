@@ -38,30 +38,37 @@ ul {
   align-items      : center;
   justify-content  : center;
   justify-items    : center;
-  border-radius    : rem(8px);
-  background-color : grey;
-  width            : 270px;
-  height           : 35px;
+  border-radius    : rem(13px);
+  padding          : rem(21px) rem(50px);
+  background-color : #801c2a;
+  width            : 247px;
+  height           : 63px;
+  font-family      : $main-font-family;
+  font-size        : rem(20px);
+  font-weight      : 300;
+  color            : $light;
+  text-decoration  : none;
+  @include animation-3;
 
+  b {
+    font-weight  : Bold;
+    margin-right : 5px;
+  }
+  /* @Fixme: Hover Effect buggy show to much opacity */
   &.btn-1 {
-    width            : 179px;
-    height           : 49px;
-    border-radius    : 10px 0 20px 10px;
-    color            : #4062a7;
-    background-color : $light;
-    font-size        : rem(20px);
-    font-family      : $main-font-family;
-    text-decoration  : none;
-    font-weight      : 400;
-
-    strong, b {
-      font-weight  : 800;
-      margin-right : 5px;
-    }
+    @include gradient-1;
+    color : $dark;
 
     &:hover {
-      background-color : darken($light, 5%);
-      cursor           : pointer;
+      background : $light;
     }
+  }
+  &.btn-3 {
+    border           : #fff solid 2px;
+    border-radius    : 14px;
+    background-color : rgba(3, 11, 14, 0.70);
+    color            : #fff;
+    font-size        : rem(25px);
+    font-weight      : 300;
   }
 }

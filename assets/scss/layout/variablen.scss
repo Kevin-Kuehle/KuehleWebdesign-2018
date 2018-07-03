@@ -4,12 +4,32 @@ $title-font-family : 'Raleway', sans-serif;
 $icon-font-family : 'icomoon';
 $font-size : 16px;
 
+//screens
+$min-screen : 400px;
+$max-screen : 1200px;
+
+//font-size-mobile
+$h1-mobile : 28px;
+$h2-mobile : 24px;
+$h3-mobile : 22px;
+$h4-mobile : 20px;
+$p-mobile : 16px;
+$small-mobile : 14px;
+
+// screen-size-screen
+$h1-screen : 39px;
+$h2-screen : 31px;
+$h3-screen : 25px;
+$h4-screen : 20px;
+$p-screen : 16px;
+$small-screen : 14px;
+
 // color
 $color-1 : red;
 $color-2 : #4062a7;
 $color-3 : #82b541;
 $color-4 : #181f2d;
-$color-5 : #f5aa6c;
+$color-5 : #e9cb49;
 
 $dark : #242424;
 $light : #f7f7f7;
@@ -20,9 +40,6 @@ $error : #ff4d57;
 
 $check : #82b541;
 
-//grid padding
-
 // general
 $template-width : 1600px;
 $gap : 16px;
-

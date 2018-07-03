@@ -1,10 +1,77 @@
-// Überschriften
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 h1 {
   @include mainFont;
-  font-size   : rem(40px);
-  line-height : rem(64px);
+  //font-size   : rem(39px);
+  @include fluid-type($min-screen, $max-screen, $h1-mobile, $h1-screen);
+  font-weight : 400;
+  line-height : 120%;
+  text-align  : center;
+  color       : $light;
+
+  strong, b {
+    font-weight : 400;
+    color       : $color-5;
+  }
+  .header & {
+    text-shadow : rgba(0, 0, 0, 1) 0 2px 2px;
+  }
+}
+h2 {
+  @include fluid-type($min-screen, $max-screen, $h2-mobile, $h2-screen);
+  line-height   : 140%;
+  font-family   : $main-font-family;
+  color         : $color-2;
+  font-weight   : 500;
+  text-align    : center;
+  margin-top    : rem(80px);
+  margin-bottom : rem(130px);
+}
+h3 {
+  @include fluid-type($min-screen, $max-screen, $h3-mobile, $h3-screen);
+  line-height   : 140%;
+  font-family   : $main-font-family;
+  color         : $color-2;
+  font-weight   : 500;
+  text-align    : center;
+  margin-top    : rem(80px);
+  margin-bottom : rem(130px);
+}
+h4 {
+  @include fluid-type($min-screen, $max-screen, $h4-mobile, $h4-screen);
+  line-height   : 140%;
+  font-family   : $main-font-family;
+  color         : $color-2;
+  font-weight   : 500;
+  text-align    : center;
+  margin-top    : rem(80px);
+  margin-bottom : rem(130px);
+}
+h4 {
+  @include fluid-type($min-screen, $max-screen, $h5-mobile, $h5-screen);
+  line-height   : 140%;
+  font-family   : $main-font-family;
+  color         : $color-2;
+  font-weight   : 500;
+  text-align    : center;
+  margin-top    : rem(80px);
+  margin-bottom : rem(130px);
+}
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+p {
+  @include fluid-type($min-screen, $max-screen, $p-mobile, $p-screen);
+  font-family : $title-font-family;
+  line-height : 140%;
+  font-weight : 500;
+}
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.callToActionPhone {
+  font-family : $main-font-family;
+  font-size   : rem(25px);
+  line-height : rem(33px);
+  font-weight : 300;
 
   strong, b {
     font-weight : 500;
   }
 }
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

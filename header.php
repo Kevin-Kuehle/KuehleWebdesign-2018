@@ -1,5 +1,4 @@
 <!doctype html>
-<html
 <html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -8,6 +7,14 @@
 	<?php wp_head(); ?>
 </head>
 <body class="<?php body_class(); ?>">
+<noscript>
+    <div class="info">
+        <h1>Javascript ist Dealtiviert</h1>
+        <p>Diese Webseite ist nur mit <b>Javascript</b> nutzbar. Bitte aktivieren Sie Javascript.</p>
+    </div>
+
+</noscript>
+<!--/* @TODO: Datenschutz & Cockies tag here and remove from DOM with Javascript if klick ok */-->
 <header class="header">
     <div class="topBar">
         <div class="logo"><img src="<?php echo get_template_directory_uri() . '/assets/images/logos/logo_w.svg' ?>" alt="Kühle-Webdesign Logo"></div>
@@ -33,22 +40,24 @@
 		?>
     </div>
     <div class="infoBox">
-        <div class="claim"><h1>Kühle-Webdesign in Berlin <strong>erstellt für Ihr Unternehmen eine responsive
-                    Webseite</strong>, die Ihre Marketingstrategie wirkungsvoll unterstützt.</h1></div>
+        <div class="claim"><h1>Erreichen Sie <strong>mehr Kunden</strong> mit <b>Ihrer</b> Webseite, <br>
+                die zu <b>Ihrer Zielgruppe</b> und <b>Leistungen</b> passt.</h1></div>
         <div class="leistungen">
             <ul class="greenCheck">
-                <li>item-1</li>
-                <li>item-2</li>
-                <li>item-3</li>
-                <li>item-4</li>
+                <li>Mehr Kunden erreichen</li>
+                <li>Von der Kongurrenz Abheben</li>
+                <li>Professionelles Auftreten</li>
             </ul>
         </div>
 
     </div>
     <div class="bottomBar">
         <div class="callToAction">
-            <div class="phone"><span class="icon-phone"></span>(030) 915 75 222</div>
-            <div class="anfrageSenden"><a class="btn btn-1" href="#"><b>Anfrage</b> Senden</a></div>
+            <span class="label">zu den Themen</span>
+            <div class="buttons">
+                <a href="#" class="btn btn-3">item-1</a><a href="#" class="btn btn-3">item-2</a><a href="#" class="btn btn-3">item-3</a><a href="#" class="btn btn-3">item-4</a><a href="#"
+                                                                                                                                                                                   class="btn btn-3">item-5</a>
+            </div>
         </div>
         <span class="scrollDown icon-angle-double-down"></span>
     </div>

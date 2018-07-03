@@ -17,4 +17,49 @@ body {
     padding : 0 0.5rem;
   }
 }
+noscript {
+  position              : fixed;
+  top                   : 0;
+  left                  : 0;
+  height                : 100vh;
+  width                 : 100vw;
+  z-index               : 5000;
+  background-color      : rgba($light, 0.95);
+  display               : grid;
+  grid-template-rows    : 20% 1fr 10%;
+  grid-template-columns : 10px repeat(12, 1fr) 10px;
 
+  .info {
+    grid-area       : 2 / 3 / 3 / -2;
+    display         : flex;
+    flex-flow       : column;
+    justify-content : flex-start;
+    justify-items   : center;
+    align-items     : center;
+    align-content   : center;
+  }
+  h1 {
+    font-size     : 78px;
+    color         : $error;
+    margin-bottom : 1.5rem;
+  }
+  p {
+    font-family : $main-font-family;
+    font-size   : rem(25px);
+  }
+}
+.label {
+  position : relative;
+  &:before, &:after {
+    content : '———';
+    display : block;
+  }
+
+  &:before {
+    margin-right : 1rem;
+  }
+
+  &:after {
+    margin-left : 1rem;
+  }
+}

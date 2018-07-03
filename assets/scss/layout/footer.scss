@@ -1,0 +1,19 @@
+.footer {
+  display               : grid;
+  grid-template-columns : 25% 50% 25%;
+  grid-template-rows    : 100%;
+  align-content         : center;
+  align-items           : center;
+  height                : 185px;
+  background            : #181f2d;
+  padding               : 0 2rem;
+
+  .logo {
+    img {
+      width     : 100%;
+      max-width : rem(275px);
+      height    : auto;
+    }
+  }
+}
+
