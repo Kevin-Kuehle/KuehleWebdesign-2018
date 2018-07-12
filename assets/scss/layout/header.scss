@@ -2,10 +2,12 @@
   display               : Grid;
   grid-template-columns : 100%;
   grid-template-rows    : 215px 200px 1fr;
-  grid-template-areas   : "topBar" "title" "bottomBar";
+  grid-template-areas   : "topBar" "title" ".";
   height                : 100vh;
   position              : relative;
-  background            : $color-2 url('assets/images/header/Background@2x.jpg') center 100% / cover no-repeat;
+  overflow              : hidden;
+  /* @Test: Test can deleate if video background stable */
+  //background            : $color-2 url('assets/images/header/Background@2x.jpg') center 100% / cover no-repeat;
 
   &:after {
     content    : '';
@@ -34,6 +36,7 @@
     justify-content       : center;
 
     .logo {
+      grid-area       : logo;
       display         : flex;
       flex-flow       : row nowrap;
       justify-content : start;
@@ -49,6 +52,7 @@
       }
     }
     .menu {
+      grid-area       : desktopMenu;
       display         : flex;
       flex-flow       : row nowrap;
       align-content   : center;
@@ -56,13 +60,12 @@
       justify-content : center;
       justify-items   : center;
     }
+
+    .info {
+      grid-area : info;
+    }
     .mobileMenuButton {
       display : none;
-    }
-    @include breakpoint(lg) {
-      .mobileMenu {
-        display : none;
-      }
     }
   }
   .infoBox {
@@ -123,7 +126,7 @@
         justify-items   : center;
         align-content   : center;
         align-items     : center;
-        font-size       : rem(16px);
+        @include fluid-type($min-screen, $max-screen, 12px, 14px);
         font-weight     : 400;
         font-family     : $title-font-family;
         color           : $light;
@@ -166,17 +169,36 @@
       align-self                : flex-end;
     }
   }
+  video {
+    position : absolute;
+    left     : 0;
+    top      : 0;
+    width    : 100vw;
+    z-index  : -2;
+  }
   //  @Large:  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  @include breakpoint(md) {
-    .topBar {
-      height     : rem(56px);
-      position   : fixed;
-      width      : 100vw;
-      top        : 0;
-      left       : 0;
-      background : linear-gradient(180deg, #1a4968, #091d29);
-      padding    : 0 0.5rem;
+  @include breakpoint(lg) {
+    grid-template-rows  : 100px 50px 1fr;
+    grid-template-areas : "topBar" "title" "bottomBar";
 
+    .topBar {
+      height                : rem(56px);
+      position              : fixed;
+      width                 : 100vw;
+      top                   : 0;
+      left                  : 0;
+      padding               : 0 0.5rem;
+      background-color      : rgba(0, 0, 0, 0.7);
+
+      grid-template-columns : 1fr 1fr;
+      grid-template-rows    : 100%;
+      grid-template-areas   : "logo mobileButton";
+
+      .logo {
+        img {
+          padding : 35px;
+        }
+      }
       .mobileMenuButton {
         display         : flex;
         flex-flow       : row nowrap;

@@ -5,15 +5,17 @@ ul.mainMenu {
   list-style      : none;
 
   li {
-    padding : 0 rem(70px) 0 0;
+    padding   : 0 rem(70px) 0 0;
     &:last-of-type {
       padding-right : 0;
     }
+    font-size : inherit;
 
     a {
       @include menu-font-style;
       @include animation-2;
       position : relative;
+      @include fluid-type(400px, 1200px, 16px, 22px);
 
       &:after {
         content          : '';
@@ -40,11 +42,15 @@ ul.mainMenu {
       }
     }
   }
+
+  @include breakpoint(lg) {
+    display : none;
+  }
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 .mobileMenuContainer {
   display : none;
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
     position  : fixed;
     left      : 0;
     top       : rem(56px);

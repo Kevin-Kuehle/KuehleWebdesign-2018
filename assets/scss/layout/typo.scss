@@ -1,3 +1,22 @@
+//screens
+$min-screen : 400px;
+$max-screen : 1200px;
+
+//font-size-mobile
+$h1-mobile : 28px;
+$h2-mobile : 24px;
+$h3-mobile : 22px;
+$h4-mobile : 20px;
+$p-mobile : 16px;
+$small-mobile : 14px;
+
+// screen-size-screen
+$h1-screen : 39px;
+$h2-screen : 31px;
+$h3-screen : 25px;
+$h4-screen : 20px;
+$p-screen : 16px;
+$small-screen : 14px;
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 h1 {
   @include mainFont;
@@ -47,7 +66,7 @@ h4 {
   margin-bottom : rem(130px);
 }
 h4 {
-  @include fluid-type($min-screen, $max-screen, $h5-mobile, $h5-screen);
+  @include fluid-type($min-screen, $max-screen, $h4-mobile, $h4-screen);
   line-height   : 140%;
   font-family   : $main-font-family;
   color         : $color-2;
