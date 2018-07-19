@@ -6,8 +6,7 @@
   height                : 100vh;
   position              : relative;
   overflow              : hidden;
-  /* @Test: Test can deleate if video background stable */
-  //background            : $color-2 url('assets/images/header/Background@2x.jpg') center 100% / cover no-repeat;
+  @include fluid(margin-bottom, $min-screen, $max-screen, 60px, 120px);
 
   &:after {
     content    : '';
@@ -21,7 +20,7 @@
     background : linear-gradient(0deg, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.68));
 
   }
-
+  /*--------------------*/
   .topBar {
     grid-area             : topBar;
     height                : 100%;
@@ -79,20 +78,20 @@
     }
     .leistungen {
       ul {
-        display          : flex;
-        flex-flow        : row wrap;
-        justify-content  : center;
-        margin           : 0 auto;
-        background-color : rgba(5, 17, 23, 0.85);
-        padding          : 0.8rem 1rem;
-        max-width        : max-content;
+        display         : flex;
+        flex-flow       : row wrap;
+        justify-content : center;
+        margin          : 0 auto;
+        padding         : 0.8rem 1rem;
+        max-width       : max-content;
 
         li {
-          font-family  : $main-font-family;
+          font-family  : $title-font-family;
           margin-right : rem(50px);
           font-size    : rem(20px);
           color        : $light;
-          font-weight  : 300;
+          font-weight  : 600;
+          @include text-shaddow-1;
 
           &:last-of-type {
             margin-right : 0;

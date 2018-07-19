@@ -37,6 +37,12 @@ $breakpoints : (
   text-decoration : none;
   color           : $light;
 }
+@mixin text-shaddow-1 {
+  text-shadow : 0 1px 1px rgba(0, 0, 0, 0.8);
+}
+@mixin box-shaddow-1 {
+  box-shadow : 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Animations
 @mixin animation-1 {
@@ -46,7 +52,7 @@ $breakpoints : (
   transition : all 0.2s linear;
 }
 @mixin animation-3 {
-  transition : all .9s ease-in;
+  transition : background-color .2s ease-in;
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*Global*/
@@ -54,10 +60,10 @@ $breakpoints : (
   padding : 0 $gap;
 }
 @mixin pageWidth {
-  width        : 100%;
-  max-width    : $template-width;
-  display      : grid;
-  justify-self : center;
+  width     : 100%;
+  max-width : $template-width;
+  display   : grid;
+  margin    : 0 auto;
   @include sitePadding;
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -83,6 +89,26 @@ $breakpoints : (
       }
       @media screen and (min-width : $max-vw) {
         font-size : $max-font-size;
+      }
+    }
+  }
+}
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@mixin fluid($css-option,$min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1 : unit($min-vw);
+  $u2 : unit($max-vw);
+  $u3 : unit($min-font-size);
+  $u4 : unit($max-font-size);
+  $u5 : $css-option;
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      #{$u5} : $min-font-size;
+      @media screen and (min-width : $min-vw) {
+        #{$u5} : calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width : $max-vw) {
+        #{$u5} : $max-font-size;
       }
     }
   }

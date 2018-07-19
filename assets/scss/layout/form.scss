@@ -4,6 +4,7 @@
 ul {
   li {
     @include fluid-type(400px, 1200px, 12px, 16px);
+    text-rendering : optimizeLegibility;
     &:before {
       font-family : $icon-font-family;
       content     : '';
@@ -34,11 +35,12 @@ ul {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*Buttons*/
 .btn {
-  display          : inline-flex;
+  display          : flex;
   align-content    : center;
   align-items      : center;
   justify-content  : center;
   justify-items    : center;
+  margin           : 0 auto;
   border-radius    : rem(13px);
   padding          : rem(21px) rem(50px);
   background-color : #801c2a;
@@ -60,9 +62,11 @@ ul {
   &.btn-1 {
     @include gradient-1;
     color : $dark;
+    @include box-shaddow-1;
 
     &:hover {
-      background : $light;
+      color      : $light;
+      background : $color-2;
     }
   }
   &.btn-3 {

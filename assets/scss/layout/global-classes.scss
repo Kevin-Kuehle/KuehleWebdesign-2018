@@ -1,0 +1,4 @@
+.callToActionPhone {
+  @include fluid(margin-top, $min-screen, $max-screen, 36px, 80px);
+  @include fluid(margin-bottom, $min-screen, $max-screen, 26px, 56px);
+}

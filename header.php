@@ -62,8 +62,8 @@
         </div>
         <span class="scrollDown icon-angle-double-down"></span>
     </div>
-    <video autoplay loop poster="<?php echo get_template_directory_uri() . '/assets/images/header/Background@2x.jpg' ?>" id="bgvid">
-        <source src="<?php echo get_template_directory_uri() . '/assets/video/background_video_1.mp4' ?>" type="video/mp4">
-        <source src="<?php echo get_template_directory_uri() . '/assets/video/background_video_2.webm' ?>" type="video/webm">
+    <video autoplay loop poster="<?php echo get_template_directory_uri() . '/assets/images/header/Background@2x.jpg'; ?>" id="bgvid">
+        <source src="<?php echo get_template_directory_uri() . '/assets/video/background_video_1.mp4'; ?>" type="video/mp4">
+        <source src="<?php echo get_template_directory_uri() . '/assets/video/background_video_2.webm'; ?>" type="video/webm">
     </video>
 </header>

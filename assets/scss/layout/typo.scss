@@ -5,7 +5,7 @@ $max-screen : 1200px;
 //font-size-mobile
 $h1-mobile : 28px;
 $h2-mobile : 24px;
-$h3-mobile : 22px;
+$h3-mobile : 18px;
 $h4-mobile : 20px;
 $p-mobile : 16px;
 $small-mobile : 14px;
@@ -13,11 +13,14 @@ $small-mobile : 14px;
 // screen-size-screen
 $h1-screen : 39px;
 $h2-screen : 31px;
-$h3-screen : 25px;
+$h3-screen : 20px;
 $h4-screen : 20px;
 $p-screen : 16px;
 $small-screen : 14px;
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+h1, h2, h3, h4 {
+  text-rendering : optimizeLegibility;
+}
 h1 {
   @include mainFont;
   //font-size   : rem(39px);
@@ -37,23 +40,31 @@ h1 {
 }
 h2 {
   @include fluid-type($min-screen, $max-screen, $h2-mobile, $h2-screen);
-  line-height   : 140%;
-  font-family   : $main-font-family;
-  color         : $color-2;
-  font-weight   : 500;
-  text-align    : center;
-  margin-top    : rem(80px);
-  margin-bottom : rem(130px);
+  line-height : 140%;
+  font-family : $main-font-family;
+  color       : $color-2;
+  font-weight : 500;
+  text-align  : center;
+  @include fluid(margin-bottom, $min-screen, $max-screen, 10px, 26px);
+
+  &.left {
+    text-align : left;
+  }
 }
 h3 {
   @include fluid-type($min-screen, $max-screen, $h3-mobile, $h3-screen);
-  line-height   : 140%;
-  font-family   : $main-font-family;
-  color         : $color-2;
-  font-weight   : 500;
-  text-align    : center;
-  margin-top    : rem(80px);
-  margin-bottom : rem(130px);
+  line-height : 140%;
+  font-family : $main-font-family;
+  color       : $color-2;
+  font-weight : 500;
+  text-align  : left;
+  @include fluid(margin-bottom, $min-screen, $max-screen, 12px, 13px);
+
+  .WebsiteFunctions & {
+    color       : $color-1;
+    font-weight : bold;
+  }
+
 }
 h4 {
   @include fluid-type($min-screen, $max-screen, $h4-mobile, $h4-screen);
@@ -78,19 +89,27 @@ h4 {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 p {
   @include fluid-type($min-screen, $max-screen, $p-mobile, $p-screen);
-  font-family : $title-font-family;
-  line-height : 140%;
-  font-weight : 500;
-}
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-.callToActionPhone {
-  font-family : $main-font-family;
-  font-size   : rem(25px);
-  line-height : rem(33px);
-  font-weight : 300;
+  font-family    : $title-font-family;
+  line-height    : 140%;
+  font-weight    : 400;
+  text-rendering : optimizeLegibility;
 
-  strong, b {
-    font-weight : 500;
+  .callToActionPhone & {
+    text-align  : center;
+
+    @include fluid-type($min-screen, $max-screen, 16px, 25px);
+    color       : #505050;
+    font-family : $main-font-family;
+    font-weight : 300;
+    b {
+      font-weight : 700;
+      color       : #505050;
+    }
+    &.phone {
+      color       : $color-2;
+      font-weight : 500;
+    }
   }
+
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

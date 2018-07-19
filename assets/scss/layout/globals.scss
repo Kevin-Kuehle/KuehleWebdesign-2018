@@ -11,6 +11,7 @@ html, body {
 }
 html {
   background-color : #f7f7f7;
+  text-rendering   : optimizeLegibility;
 }
 body {
   ~ * {

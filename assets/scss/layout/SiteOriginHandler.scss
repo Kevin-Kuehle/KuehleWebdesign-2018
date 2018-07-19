@@ -1,28 +1,79 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*Video Section*/
 #pgc-8-0-0 {
-  border                : 1px dashed red;
   @include pageWidth;
-  grid-auto-rows        : auto;
+  justify-self          : center;
   grid-template-columns : 100%;
 
   /*Überschrift*/
   .so-panel:nth-of-type(1) {
     grid-area : 1 1 / 2 2;
-    border    : 1px dashed #ff52f5;
   }
   /*The Video*/
-  .so-panel:nth-of-type(2) {
-    grid-area     : 1 1 / 2 2;
-    width         : 100%;
-    max-width     : rem(900px);
-    height        : auto;
-    margin-bottom : rem(80px);
+  #panel-8-0-0-1 {
+    margin    : 0 auto;
+    max-width : 960px;
   }
-  /*Call to Action*/
-  .so-panel:nth-of-type(3) {
-    grid-area : 1 1 / 2 2;
-  }
-
 }
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------<------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#pg-8-1 {
+  #panel-8-1-0-0 {
+    .textwidget {
+      @include pageWidth;
+      grid-template-columns : 1fr 1fr 1fr;
+      grid-template-rows    : auto;
+      grid-template-areas   : "title title title";
+      grid-column-gap       : 25px;
+      grid-row-gap          : 50px;
+
+      h2 {
+        grid-area : title;
+      }
+
+    }
+  }
+}
+#pg-8-2 {
+  #pgc-8-2-0 {
+
+    #panel-8-2-0-0 {
+      @include box-shaddow-1;
+      .so-widget-sow-editor {
+
+        .container-seo {
+          @include pageWidth;
+          grid-template-rows    : 100%;
+          grid-template-columns : 1fr 3fr;
+          grid-column-gap       : 25px;
+          grid-template-areas   : "image text";
+          height                : 160px;
+
+          align-content         : center;
+          align-items           : center;
+        }
+        .image {
+          grid-area : image;
+          position  : relative;
+          z-index   : 2;
+          &:before {
+            position         : absolute;
+            content          : '';
+            height           : 100%;
+            width            : 100vw;
+            right            : 0;
+            background-color : $color-2;
+            z-index          : -1;
+
+          }
+        }
+
+        .text {
+          grid-area : text;
+        }
+      }
+    }
+  }
+}
+.panel-grid {
+  @include fluid(margin-bottom, $min-screen, $max-screen, 90px, 160px);
+}
