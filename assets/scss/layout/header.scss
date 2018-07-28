@@ -1,217 +1,92 @@
 .header {
-  display               : Grid;
-  grid-template-columns : 100%;
-  grid-template-rows    : 215px 200px 1fr;
-  grid-template-areas   : "topBar" "title" ".";
-  height                : 100vh;
-  position              : relative;
-  overflow              : hidden;
-  @include fluid(margin-bottom, $min-screen, $max-screen, 60px, 120px);
-
-  &:after {
-    content    : '';
-    position   : absolute;
-    left       : 0;
-    top        : 0;
-    width      : 100%;
-    max-width  : 100vw;
-    height     : 80vh;
-    z-index    : -1;
-    background : linear-gradient(0deg, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.68));
-
-  }
-  /*--------------------*/
+  display          : flex;
+  justify-content  : center;
+  width            : 100vw;
+  background-color : $color-1;
+  @include fluid(height, $min-screen, $max-screen, 73px, 167px);
+  @include fluid(margin-bottom, $min-screen, $max-screen, 50px, 140px);
   .topBar {
-    grid-area             : topBar;
-    height                : 100%;
-    @include pageWidth;
-    z-index               : 300;
-
-    grid-template-columns : 0.5fr 1fr 0.5fr;
+    display               : grid;
+    @include siteWidth;
+    justify-self          : center;
     grid-template-rows    : 100%;
-    grid-template-areas   : "logo desktopMenu info";
-
+    grid-template-columns : 1fr 2fr 1fr;
+    grid-template-areas   : "logo mainMenu phoneBox";
     align-content         : center;
-    justify-content       : center;
+    align-items           : center;
 
     .logo {
-      grid-area       : logo;
-      display         : flex;
-      flex-flow       : row nowrap;
-      justify-content : start;
-      align-content   : center;
-      justify-items   : center;
-      align-items     : center;
-
+      grid-area : logo;
       img {
-        width     : 100%;
-        max-width : rem(211px);
-        height    : auto;
-
+        @include fluid(width, $min-screen, $max-screen, 120px, 211px);
       }
     }
-    .menu {
-      grid-area       : desktopMenu;
-      display         : flex;
-      flex-flow       : row nowrap;
-      align-content   : center;
-      align-items     : center;
-      justify-content : center;
-      justify-items   : center;
+    .mainMenu {
+      grid-area : mainMenu;
     }
+    .infoBox {
+      grid-area      : phoneBox;
+      justify-self   : end;
+      text-transform : uppercase;
 
-    .info {
-      grid-area : info;
-    }
-    .mobileMenuButton {
-      display : none;
-    }
-  }
-  .infoBox {
-    grid-area : title;
-    @include pageWidth;
-
-    .claim {
-      color      : $light;
-      text-align : center;
-
-    }
-    .leistungen {
-      ul {
-        display         : flex;
-        flex-flow       : row wrap;
-        justify-content : center;
-        margin          : 0 auto;
-        padding         : 0.8rem 1rem;
-        max-width       : max-content;
-
-        li {
-          font-family  : $title-font-family;
-          margin-right : rem(50px);
-          font-size    : rem(20px);
-          color        : $light;
-          font-weight  : 600;
-          @include text-shaddow-1;
-
-          &:last-of-type {
-            margin-right : 0;
-          }
+      span {
+        @include headerFont;
+        &:before {
+          margin-right : 0.5rem;
         }
       }
     }
-
+    .menuButton, .infoButton {
+      display : none;
+    }
+    .infoButton {
+      grid-area : infoButton;
+    }
+    .menuButton {
+      grid-area : menuButton;
+    }
+    .logo {
+      display         : flex;
+      justify-items   : start;
+      justify-content : start;
+    }
   }
-  .bottomBar {
-    grid-area           : bottomBar;
-    display             : grid;
-    grid-auto-columns   : 100%;
-    grid-auto-rows      : 15vh 50px;
-    grid-template-areas : "calltoaction" "scrollDown";
-
-    align-content       : flex-end;
-    justify-content     : center;
-    justify-items       : center;
-
-    .callToAction {
-      grid-area          : calltoaction;
-      display            : grid;
-      grid-template-rows : auto 1fr;
-
-      .label {
-        grid-area       : 1 1 / 2 2;
+  //  @Medium:  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  @include breakpoint(md) {
+    position : fixed;
+    top      : 0;
+    left     : 0;
+    z-index  : 5000;
+    .topBar {
+      grid-template-areas : "menuButton logo infoButton";
+      .mainMenu, .infoBox {
+        display : none;
+      }
+      .menuButton, .infoButton {
         display         : flex;
         flex-flow       : row nowrap;
         justify-content : center;
         justify-items   : center;
         align-content   : center;
         align-items     : center;
-        @include fluid-type($min-screen, $max-screen, 12px, 14px);
-        font-weight     : 400;
-        font-family     : $title-font-family;
-        color           : $light;
-        margin-bottom   : 1.5rem;
-        text-transform  : uppercase;
       }
-      .buttons {
-        display         : flex;
-        flex-flow       : row;
-        width           : 100%;
-        min-width       : $template-width;
-        justify-content : space-between;
-        align-items     : center;
-        align-self      : baseline;
-      }
-
-    }
-
-    @keyframes upDown {
-      0% {
-        transform : translateY(0);
-      }
-      50% {
-        transform : translateY(-10px);
-      }
-
-      100% {
-        transform : translateY(0);
-      }
-    }
-    @include pageWidth;
-
-    .scrollDown {
-      grid-area                 : scrollDown;
-      font-size                 : 1.5rem;
-      color                     : $light;
-      animation-name            : upDown;
-      animation-duration        : 3s;
-      animation-iteration-count : infinite;
-      align-self                : flex-end;
-    }
-  }
-  video {
-    position : absolute;
-    left     : 0;
-    top      : 0;
-    width    : 100vw;
-    z-index  : -2;
-  }
-  //  @Large:  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  @include breakpoint(lg) {
-    grid-template-rows  : 100px 50px 1fr;
-    grid-template-areas : "topBar" "title" "bottomBar";
-
-    .topBar {
-      height                : rem(56px);
-      position              : fixed;
-      width                 : 100vw;
-      top                   : 0;
-      left                  : 0;
-      padding               : 0 0.5rem;
-      background-color      : rgba(0, 0, 0, 0.7);
-
-      grid-template-columns : 1fr 1fr;
-      grid-template-rows    : 100%;
-      grid-template-areas   : "logo mobileButton";
-
-      .logo {
-        img {
-          padding : 35px;
-        }
-      }
-      .mobileMenuButton {
-        display         : flex;
-        flex-flow       : row nowrap;
-        justify-content : flex-end;
-        align-content   : center;
-        align-items     : center;
-        min-height      : 100%;
-        width           : auto;
-        grid-area       : mobileButton;
+      .menuButton, .infoButton {
+        font-family    : $main-font-family;
+        text-transform : capitalize;
+        color          : $light;
 
         span {
-          color     : $light;
-          font-size : 2.6rem;
+          display       : flex;
+          align-content : flex-end;
+
+          &:before {
+            font-size    : rem(26px);
+            margin-right : 0.3rem;
+          }
         }
+      }
+      .logo {
+        justify-content : center;
       }
     }
   }

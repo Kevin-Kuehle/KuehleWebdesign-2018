@@ -4,7 +4,6 @@
   margin     : 0;
   padding    : 0;
   box-sizing : border-box;
-  z-index    : 100;
 }
 html, body {
 
@@ -16,6 +15,10 @@ html {
 body {
   ~ * {
     padding : 0 0.5rem;
+  }
+  //  @Medium:  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  @include breakpoint(md) {
+    @include fluid(margin-top, $min-screen, $max-screen, 73px, 167px);
   }
 }
 noscript {

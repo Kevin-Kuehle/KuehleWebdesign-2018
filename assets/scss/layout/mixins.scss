@@ -30,12 +30,13 @@ $breakpoints : (
   font-family : $title-font-family;
   font-weight : 500;
 }
-@mixin menu-font-style {
+@mixin headerFont {
   font-family     : $main-font-family;
-  font-size       : rem(24px);
-  font-weight     : 300;
+  @include fluid-type($min-screen, $max-screen, 16px, 18px);
+  text-transform  : uppercase;
   text-decoration : none;
   color           : $light;
+  font-weight     : 300;
 }
 @mixin text-shaddow-1 {
   text-shadow : 0 1px 1px rgba(0, 0, 0, 0.8);
@@ -56,15 +57,11 @@ $breakpoints : (
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*Global*/
-@mixin sitePadding {
-  padding : 0 $gap;
-}
-@mixin pageWidth {
-  width     : 100%;
-  max-width : $template-width;
-  display   : grid;
-  margin    : 0 auto;
-  @include sitePadding;
+@mixin siteWidth {
+  width        : 100%;
+  max-width    : $template-width;
+  padding      : 0 $gap;
+  justify-self : center;
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*Gradients*/
