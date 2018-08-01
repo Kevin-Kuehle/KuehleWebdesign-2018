@@ -31,7 +31,7 @@
 				'theme_location' => 'mainMenu'
 			] ); ?>
         </div>
-        <div class="mobileMenuBox showme">
+        <div class="mobileMenuBox">
 			<?php
 			wp_nav_menu( [
 				'menu_class'     => 'mobileMenu',

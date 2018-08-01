@@ -50,6 +50,7 @@ ul.mainMenu {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //* @Fixme: set the Transition to the property you want to animate and remove "all" */
+//* @Fixme: add a good transsition to the menu */
 .mobileMenuBox {
   display          : none;
   position         : absolute;
@@ -62,6 +63,7 @@ ul.mainMenu {
   transition       : all .6s ease-in;
   &.showme {
     display    : block;
+    height     : auto;
     transition : all .6s ease-in;
   }
   //  @Medium:  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
