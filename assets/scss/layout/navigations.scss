@@ -48,7 +48,6 @@ ul.mainMenu {
   }
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 //* @Fixme: set the Transition to the property you want to animate and remove "all" */
 //* @Fixme: add a good transsition to the menu */
 .mobileMenuBox {
@@ -106,10 +105,13 @@ ul.footerMenu {
 
     a {
       color           : $light;
-      font-size       : rem(21px);
+      @include fluid-type($min-screen, $max-screen, 14px, 16px);
       font-family     : $main-font-family;
       font-weight     : 300;
       text-decoration : none;
     }
+  }
+  @include breakpoint(md) {
+      display: none !important;
   }
 }

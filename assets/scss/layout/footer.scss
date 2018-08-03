@@ -1,18 +1,49 @@
 .footer {
-  display               : grid;
-  grid-template-columns : 25% 50% 25%;
-  grid-template-rows    : 100%;
-  align-content         : center;
-  align-items           : center;
-  height                : 185px;
-  background            : #181f2d;
-  padding               : 0 2rem;
+  background-color: $color-1;
+  width: 100%;
+  @include GridLayout;
+  padding: 3rem 0;
 
-  .logo {
-    img {
-      width     : 100%;
-      max-width : rem(275px);
-      height    : auto;
+  .gridBox {
+    > * {
+      grid-column : unset;
+    }
+    display : grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 100%;
+    grid-template-areas: "logo menu optional";
+
+    .logo {
+      grid-area: logo;
+      display: flex;
+      justify-items: start;
+      justify-content: start;
+      img {
+        width     : 100%;
+        max-width : rem(180px);
+        height    : auto;
+      }
+    }
+    .footerMenu {
+      grid-area: menu;
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      justify-items: center;
+    }
+    .optional {
+      background-attachment : optional;
+    }
+
+    @include breakpoint(md) {
+      grid-template-columns: 1fr;
+      grid-template-areas : "logo";
+
+      .logo {
+        justify-items : center;
+        justify-content: center;
+      }
     }
   }
 }

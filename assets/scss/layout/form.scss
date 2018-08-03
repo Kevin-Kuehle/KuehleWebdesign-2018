@@ -1,6 +1,5 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*Lists*/
-
 ul {
   li {
     @include fluid-type(400px, 1200px, 12px, 16px);
@@ -9,26 +8,61 @@ ul {
       font-family : $icon-font-family;
       content     : '';
       display     : inline-block;
+      @include fluid-type($min-screen, $max-screen, 16px, 20px);
     }
   }
-
-  &.greenCheck {
+  /*Check-1 */
+  &.headerList {
     li {
+      @include mainFont;
+      color: $light;
       list-style    : none;
       display       : flex;
       flex-flow     : row;
       align-items   : center;
       align-content : center;
-      @include fluid-type(400px, 1200px, 600px, 60px);
+      @include fluid-type(400px, 1200px, 16px, 17px);
 
-      &:before {
-        content      : '\f00c';
-        display      : inline-block;
-        margin-right : 0.4rem;
-        color        : $check;
-        padding      : 0;
-        align-self   : center;
+      svg {
+        margin-right: $gap*0.5;
+        width: 18px;
+        height: auto;
+
+
+
+        path {
+          stroke: red;
+          border: 1px dashed red;
+          stroke-dasharray : 2;
+          stroke-dashoffset: 200;
+        }
+
       }
+    }
+  }
+}
+/*SVG Animation checkIcon*/
+#checkIcon {
+
+  #circle, #check {
+    animation-name: troop;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    stroke-dasharray: 1000;
+    stroke-dashoffset : 1000;
+    animation-fill-mode : forwards;
+  }
+
+  #check {
+    animation-delay: 1s;
+    animation-duration :.8s;
+  }
+  @keyframes troop {
+    from {
+      stroke-dashoffset : 1000;
+    }
+    to {
+      stroke-dashoffset : 0;
     }
   }
 }

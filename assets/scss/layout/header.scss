@@ -3,8 +3,8 @@ header {
   justify-content  : center;
   width            : 100vw;
   background-color : $color-1;
-  @include fluid(height, $min-screen, $max-screen, 73px, 167px);
-  @include fluid(margin-bottom, $min-screen, $max-screen, 50px, 140px);
+  @include fluid(height, $min-screen, $max-screen, 73px, 130px);
+
   .topBar {
     display               : grid;
     @include siteWidth;
