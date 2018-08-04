@@ -41,9 +41,10 @@ ul {
     }
   }
 }
+
+/* @TODO: find a place for css Animations maybe a extra scss file to manage it. */
 /*SVG Animation checkIcon*/
 #checkIcon {
-
   #circle, #check {
     animation-name: troop;
     animation-duration: 2s;
@@ -57,7 +58,7 @@ ul {
     animation-delay: 1s;
     animation-duration :.8s;
   }
-  @keyframes troop {
+  @-webkit-keyframes troop {
     from {
       stroke-dashoffset : 1000;
     }

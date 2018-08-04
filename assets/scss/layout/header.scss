@@ -3,6 +3,7 @@ header {
   justify-content  : center;
   width            : 100vw;
   background-color : $color-1;
+  padding : 0 $gap;
   @include fluid(height, $min-screen, $max-screen, 73px, 130px);
 
   .topBar {
@@ -53,10 +54,9 @@ header {
   }
   //  @Medium:  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   @include breakpoint(md) {
-    position : fixed;
-    top      : 0;
-    left     : 0;
+
     z-index  : 5000;
+
     .topBar {
       grid-template-areas : "menuButton logo infoButton";
       .mainMenu, .infoBox {

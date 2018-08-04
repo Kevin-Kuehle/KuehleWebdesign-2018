@@ -1,37 +1,37 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // welcomeBox
 .welcomeBox {
-  background: url( "assets/images/header/Header-Background@2x.jpg");
-  background-position: center;
-  @include fluid(height, $min-screen, $max-screen, 523px*0.7, 430px );
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
+  background          : url("assets/images/header/Header-Background@2x.jpg");
+  background-position : center;
+  @include fluid(height, $min-screen, $max-screen, 523px*0.7, 430px);
+  display             : flex;
+  flex-flow           : column;
+  justify-content     : center;
+  justify-items       : center;
+  align-items         : center;
+  align-content       : center;
+
   ul.headerList {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-column-gap: 15px;
-    justify-content: center;
-    justify-items: center;
-    width : 100%;
+    display               : grid;
+    grid-template-columns : repeat(3, auto);
+    grid-column-gap       : 15px;
+    justify-content       : center;
+    justify-items         : center;
+    width                 : 100%;
 
     li {
-      margin-right : $gap*2;
-      margin-bottom : $gap*0.3;
-      text-align: left !important;
-      justify-items: start !important;
-      justify-content: start !important;
-      justify-self: start !important;
-
+      margin-right    : $gap*2;
+      margin-bottom   : $gap*0.3;
+      text-align      : left !important;
+      justify-items   : start !important;
+      justify-content : start !important;
+      justify-self    : start !important;
 
       /* @TODO: best way use mixins to set a font style for better handling in future */
-      color: $light;
+      color           : $light;
       @include mainFont;
-      font-size : 17px;
-      justify-content: start;
+      font-size       : 17px;
+      justify-content : start;
 
       &:last-of-type {
         margin-right : 0;
@@ -45,8 +45,61 @@
     }
   }
   @include breakpoint(md) {
-    ul.check-1 {
-      grid-template-columns : repeat(1, auto);
+    ul.headerList {
+      grid-template-columns : auto;
+    }
+  }
+}
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// news & welcome text
+#pg-8-1 {
+  @include GridLayout ;
+
+  #pgc-8-1-0 {
+    display               : grid;
+    grid-template-columns : 5fr 7fr;
+    grid-column-gap       : $gap;
+    grid-template-areas   : "news text";
+
+    #panel-8-1-0-0 {
+      grid-area : news;
+
+      .newsBox {
+        background-color : $color-1;
+        padding          : 40px 28px;
+        position         : relative;
+        margin-top       : -50px;
+
+        .date {
+          position : absolute;
+          right    : 10px;
+          top      : 5px;
+          @include fluid-type($min-screen, $max-screen, 12px, 14px);
+        }
+        .content {
+          h2 {
+            @include fluid(margin-bottom, $min-screen, $max-screen, 10px, 14px);
+            text-align : left;
+          }
+        }
+
+        * {
+          color : $light;
+          @include mainFont;
+        }
+      }
+    }
+    #panel-8-1-0-1 {
+      grid-area : text;
+    }
+  }
+  @include breakpoint(md) {
+    #pgc-8-1-0{
+      grid-template-columns : auto;
+      grid-template-rows: auto auto;
+      grid-column-gap : initial;
+      grid-row-gap : $gap*2;
+      grid-template-areas : "news" "text";
     }
   }
 }
