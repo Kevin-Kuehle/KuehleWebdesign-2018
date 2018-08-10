@@ -295,6 +295,7 @@
         display       : flex;
         flex-flow     : row nowrap;
         align-content : center;
+        align-items   : center;
         .icon {
           svg {
             width        : 100%;
@@ -343,10 +344,10 @@
       }
     }
 
-    animation-name: rotateMe;
-    animation-iteration-count: infinite;
-    animation-duration: 8s;
-    transform-origin:center ;
+    animation-name            : rotateMe;
+    animation-iteration-count : infinite;
+    animation-duration        : 8s;
+    transform-origin          : center;
 
   }
 }

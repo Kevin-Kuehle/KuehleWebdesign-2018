@@ -7,6 +7,9 @@
 	<?php wp_head(); ?>
 </head>
 <body class="<?php body_class(); ?>">
+<div class="preLoaderDiv" style="height:100%; width: 100%;background-color: white; position: fixed; top: 0;left: 0;z-index: 99999">
+
+</div>
 <noscript>
     <div class="info">
         <h1>Javascript ist Dealtiviert</h1>
