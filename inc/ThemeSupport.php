@@ -24,3 +24,12 @@ add_theme_support( 'custom-logo', array(
 	'flex-width'  => true,
 	'header-text' => array( 'site-title', 'site-description' ),
 ) );
+//Add SVG so Upload
+function kwd_upload_mimes() {
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter('upload_mimes', "kwd_upload_mimes");
+
+//disable auto p
+remove_filter( 'the_content', 'wpautop' );

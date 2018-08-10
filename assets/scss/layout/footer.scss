@@ -1,8 +1,9 @@
 .footer {
-  background-color: $color-1;
+  background-color: $color-4;
   width: 100%;
   @include GridLayout;
   padding: 3rem 0;
+  @include fluid(margin-top, $min-screen, $max-screen, 25px, 60px);
 
   .gridBox {
     > * {
@@ -47,4 +48,3 @@
     }
   }
 }
-

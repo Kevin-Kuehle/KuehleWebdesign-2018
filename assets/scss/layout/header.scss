@@ -1,9 +1,9 @@
 header {
   display          : flex;
   justify-content  : center;
-  width            : 100vw;
+  width            : 100%;
   background-color : $color-1;
-  padding : 0 $gap;
+  padding: 0 $gap;
   @include fluid(height, $min-screen, $max-screen, 73px, 130px);
 
   .topBar {
@@ -54,7 +54,6 @@ header {
   }
   //  @Medium:  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   @include breakpoint(md) {
-
     z-index  : 5000;
 
     .topBar {
