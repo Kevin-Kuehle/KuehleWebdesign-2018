@@ -1,7 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Kevin
- * Date: 03.06.2018
- * Time: 18:07
- */
+<?php get_header(); ?>
+    <h1>ich bin auf einer single seite</h1>
+<?php get_footer(); ?>

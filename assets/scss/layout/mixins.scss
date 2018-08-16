@@ -2,22 +2,23 @@
 /*Breakpoints*/
 $bp-context : 16px;
 $breakpoints : (
-        'xs': em(456px, $bp-context),
-        'sm': em(640px, $bp-context),
-        'md': em(752px, $bp-context),
-        'lg': em(992px, $bp-context),
-        'xl': em(1168px, $bp-context)
+	'xs': em(456px, $bp-context),
+	'sm': em(640px, $bp-context),
+	'md': em(752px, $bp-context),
+	'lg': em(992px, $bp-context),
+	'xl': em(1168px, $bp-context),
+	'xxl': em(1366px, $bp-context)
 );
 
 @mixin breakpoint($point) {
 
   @if map-has-key($breakpoints, $point) {
 
-    @media (max-width : map-get($breakpoints, $point)) {
-      @content;
-    }
+	@media (max-width : map-get($breakpoints, $point)) {
+	  @content;
+	}
   } @else {
-    @warn "The breakpoint #{$point} is not associated with a min-width.";
+	@warn "The breakpoint #{$point} is not associated with a min-width.";
   }
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -70,17 +71,26 @@ $breakpoints : (
   justify-self          : center;
 
   > * {
-    grid-column : 2 / span 1;
-    width       : 100%;
+	grid-column : 2 / span 1;
+	width       : 100%;
   }
   @media (max-width : $template-width + 20px) {
-    grid-template-columns : $gap 1fr $gap;
+	grid-template-columns : $gap 1fr $gap;
   }
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*Gradients*/
 @mixin gradient-1 {
   background : linear-gradient(180deg, #e5e4e2 0%, #f7f7f7 300%);
+}
+@mixin gradient-2 {
+  background : linear-gradient(180deg, #d24ef4 -50%, #0f2898 150%);
+}
+@mixin gradient-3 {
+  background : linear-gradient(180deg, #d24ef4 -50%, #0f2898 150%);
+}
+@mixin gradient-4 {
+  background : linear-gradient(180deg, #a045dc 0%, #5235b7 100%);
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 @function strip-unit($value) {
@@ -93,15 +103,15 @@ $breakpoints : (
   $u4 : unit($max-font-size);
 
   @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-    & {
-      font-size : $min-font-size;
-      @media screen and (min-width : $min-vw) {
-        font-size : calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-      }
-      @media screen and (min-width : $max-vw) {
-        font-size : $max-font-size;
-      }
-    }
+	& {
+	  font-size : $min-font-size;
+	  @media screen and (min-width : $min-vw) {
+		font-size : calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+	  }
+	  @media screen and (min-width : $max-vw) {
+		font-size : $max-font-size;
+	  }
+	}
   }
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -113,14 +123,14 @@ $breakpoints : (
   $u5 : $css-option;
 
   @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-    & {
-      #{$u5} : $min-font-size;
-      @media screen and (min-width : $min-vw) {
-        #{$u5} : calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-      }
-      @media screen and (min-width : $max-vw) {
-        #{$u5} : $max-font-size;
-      }
-    }
+	& {
+	  #{$u5} : $min-font-size;
+	  @media screen and (min-width : $min-vw) {
+		#{$u5} : calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+	  }
+	  @media screen and (min-width : $max-vw) {
+		#{$u5} : $max-font-size;
+	  }
+	}
   }
 }

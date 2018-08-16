@@ -1,7 +1,8 @@
 // font
-$main-font-family : 'Open Sans', sans-serif;
-$title-font-family : 'Josefin Sans', sans-serif;
-$icon-font-family : 'icons_kuehle-webdesign';
+$main-font-family : 	'Open Sans', sans-serif;
+$title-font-family : 	'Roboto', sans-serif;
+$price-font-family : 	'Josefin Sans', sans-serif;
+$icon-font-family : 	'icons_kuehle-webdesign';
 $font-size : 16px;
 
 // color
@@ -9,8 +10,11 @@ $color-1 : #273c66;
 $color-2 : #4062a7;
 $color-3 : #d45555;
 $color-4 : #2d2d2b;
+$color-5 : #09161a;
 
-$color-5 : #e9cb49;
+$starterColor : #fff;
+$basicColor : #e9cb49;
+$businessColor : #172132;
 
 $dark : #242424;
 $light : #f7f7f7;
@@ -22,5 +26,5 @@ $error : #ff4d57;
 $check : #82b541;
 
 // general
-$template-width : 1366px;
+$template-width : 1350px;
 $gap : 25px;

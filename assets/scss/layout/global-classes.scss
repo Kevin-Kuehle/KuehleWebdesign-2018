@@ -1,4 +1,29 @@
 .callToActionPhone {
   @include fluid(margin-top, $min-screen, $max-screen, 36px, 80px);
   @include fluid(margin-bottom, $min-screen, $max-screen, 26px, 56px);
-}   
+}
+.callToAction {
+  display         : flex;
+  flex-flow       : row wrap;
+  max-width       : 100%;
+  justify-items   : center;
+  justify-content : center;
+
+  p {
+	@include fluid-type($min-screen, $max-screen, 20px, 26px);
+	flex   : 0 0 auto;
+	color  : $dark;
+	margin : 1rem;
+
+	&.light {
+	  color : $light;
+	}
+  }
+  a {
+	flex : 0 0 auto;
+  }
+
+  @include breakpoint(sm) {
+	flex-flow : column nowrap !important;
+  }
+}
