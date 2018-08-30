@@ -3,90 +3,100 @@ header {
   justify-content  : center;
   width            : 100%;
   background-color : $color-1;
-  padding: 0 $gap;
+  padding          : 0 $gap;
   @include fluid(height, $min-screen, $max-screen, 73px, 130px);
 
   .topBar {
-    display               : grid;
-    @include siteWidth;
-    justify-self          : center;
-    grid-template-rows    : 100%;
-    grid-template-columns : 1fr 2fr 1fr;
-    grid-template-areas   : "logo mainMenu phoneBox";
-    align-content         : center;
-    align-items           : center;
+	display               : grid;
+	@include siteWidth;
+	justify-self          : center;
+	grid-template-rows    : 100%;
+	grid-template-columns : 1fr 2fr 1fr;
+	grid-template-areas   : "logo mainMenu phoneBox";
+	align-content         : center;
+	align-items           : center;
 
-    .logo {
-      grid-area : logo;
-      img {
-        @include fluid(width, $min-screen, $max-screen, 120px, 211px);
-      }
-    }
-    .mainMenu {
-      grid-area : mainMenu;
-    }
-    .infoBox {
-      grid-area      : phoneBox;
-      justify-self   : end;
-      text-transform : uppercase;
+	.logo {
+	  grid-area : logo;
+	  img {
+		@include fluid(width, $min-screen, $max-screen, 120px, 211px);
+	  }
+	}
+	.mainMenu {
+	  grid-area : mainMenu;
+	}
+	.infoBox {
+	  grid-area      : phoneBox;
+	  justify-self   : end;
+	  text-transform : uppercase;
 
-      span {
-        @include headerFont;
-        &:before {
-          margin-right : 0.5rem;
-        }
-      }
-    }
-    .menuButton, .infoButton {
-      display : none;
-    }
-    .infoButton {
-      grid-area : infoButton;
-    }
-    .menuButton {
-      grid-area : menuButton;
-    }
-    .logo {
-      display         : flex;
-      justify-items   : start;
-      justify-content : start;
-    }
+	  span {
+		@include headerFont;
+		&:before {
+		  margin-right : 0.5rem;
+		}
+	  }
+	}
+	.menuButton, .infoButton {
+	  display : none;
+	}
+	.infoButton {
+	  grid-area : infoButton;
+	}
+	.menuButton {
+	  grid-area : menuButton;
+
+	}
+	.logo {
+	  display         : flex;
+	  justify-items   : start;
+	  justify-content : start;
+	}
+
+	@include breakpoint(xs) {
+	  grid-template-columns : 1fr 5fr 1fr;
+	}
   }
   //  @Medium:  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   @include breakpoint(md) {
-    z-index  : 5000;
+	z-index : 5000;
 
-    .topBar {
-      grid-template-areas : "menuButton logo infoButton";
-      .mainMenu, .infoBox {
-        display : none;
-      }
-      .menuButton, .infoButton {
-        display         : flex;
-        flex-flow       : row nowrap;
-        justify-content : center;
-        justify-items   : center;
-        align-content   : center;
-        align-items     : center;
-      }
-      .menuButton, .infoButton {
-        font-family    : $main-font-family;
-        text-transform : capitalize;
-        color          : $light;
+	.topBar {
+	  grid-template-areas : "menuButton logo infoButton";
+	  .mainMenu, .infoBox {
+		display : none;
+	  }
+	  .menuButton, .infoButton {
+		display         : flex;
+		flex-flow       : row nowrap;
+		justify-content : flex-end;
+		justify-items   : flex-end;
+		align-content   : center;
+		align-items     : center;
+	  }
+	  .menuButton, .infoButton {
+		font-family    : $main-font-family;
+		text-transform : capitalize;
+		color          : $light;
 
-        span {
-          display       : flex;
-          align-content : flex-end;
+		span {
+		  display       : flex;
+		  align-content : flex-end;
 
-          &:before {
-            font-size    : rem(26px);
-            margin-right : 0.3rem;
-          }
-        }
-      }
-      .logo {
-        justify-content : center;
-      }
-    }
+		  &:before {
+			font-size    : rem(26px);
+			margin-right : 0.3rem;
+		  }
+		}
+	  }
+	  .menuButton {
+		justify-content : flex-start;
+		justify-items   : flex-start;
+	  }
+	  .logo {
+		justify-content : center;
+		justify-items   : center;
+	  }
+	}
   }
 }

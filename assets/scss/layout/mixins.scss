@@ -25,11 +25,9 @@ $breakpoints : (
 /*Fonts*/
 @mixin mainFont {
   font-family : $main-font-family;
-  font-weight : 300;
 }
 @mixin titleFont {
   font-family : $title-font-family;
-  font-weight : 500;
 }
 @mixin headerFont {
   font-family     : $main-font-family;

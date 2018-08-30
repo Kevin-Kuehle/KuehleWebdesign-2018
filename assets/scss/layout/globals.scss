@@ -5,39 +5,36 @@
   padding    : 0;
   box-sizing : border-box;
 }
-html, body {
-
-}
 html {
-  background-color : #f2f3f4;
-  text-rendering   : optimizeLegibility;
+  text-rendering : optimizeLegibility;
 }
 body {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows : auto 1fr auto;
-  min-height: 100vh;
+  display               : grid;
+  grid-template-columns : 100%;
+  grid-template-rows    : auto 1fr auto;
+  min-height            : 100vh;
+  background-color      : $light;
 
-  grid-template-areas: "header" "main" "footer";
+  grid-template-areas   : "header" "main" "footer";
 
   ~ * {
-    padding : 0 0.5rem;
+	padding : 0 0.5rem;
   }
 }
 header, main, footer {
-  grid-column: 1 / -1;
+  grid-column : 1 / -1;
 }
 header {
-  grid-area: header;
-  grid-row: 1 / 2;
+  grid-area : header;
+  grid-row  : 1 / 2;
 }
 main {
-  grid-area: main;
-  grid-row: 2 / 3;
+  grid-area : main;
+  grid-row  : 2 / 3;
 }
 footer {
-  grid-area: footer;
-  grid-row: 3 / -1;
+  grid-area : footer;
+  grid-row  : 3 / -1;
 }
 noscript {
   position              : fixed;
@@ -52,36 +49,36 @@ noscript {
   grid-template-columns : 10px repeat(12, 1fr) 10px;
 
   .info {
-    grid-area       : 2 / 3 / 3 / -2;
-    display         : flex;
-    flex-flow       : column;
-    justify-content : flex-start;
-    justify-items   : center;
-    align-items     : center;
-    align-content   : center;
+	grid-area       : 2 / 3 / 3 / -2;
+	display         : flex;
+	flex-flow       : column;
+	justify-content : flex-start;
+	justify-items   : center;
+	align-items     : center;
+	align-content   : center;
   }
   h1 {
-    font-size     : 78px;
-    color         : $error;
-    margin-bottom : 1.5rem;
+	font-size     : 78px;
+	color         : $error;
+	margin-bottom : 1.5rem;
   }
   p {
-    font-family : $main-font-family;
-    font-size   : rem(25px);
+	font-family : $main-font-family;
+	font-size   : rem(25px);
   }
 }
 .label {
   position : relative;
   &:before, &:after {
-    content : '———';
-    display : block;
+	content : '———';
+	display : block;
   }
 
   &:before {
-    margin-right : 1rem;
+	margin-right : 1rem;
   }
 
   &:after {
-    margin-left : 1rem;
+	margin-left : 1rem;
   }
 }

@@ -82,8 +82,8 @@ ul {
 }
 /* @TODO: find a place for css Animations maybe a extra scss file to manage it. */
 /*SVG Animation checkIcon*/
-#checkIcon {
-  #circle, #check {
+.checkIcon {
+  .circle, .check {
 	animation-name            : troop;
 	animation-duration        : 2s;
 	animation-timing-function : ease-in-out;
@@ -92,7 +92,7 @@ ul {
 	animation-fill-mode       : forwards;
   }
 
-  #check {
+  .check {
 	animation-delay    : 1s;
 	animation-duration : .8s;
   }
@@ -108,27 +108,31 @@ ul {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*Buttons*/
 .btn {
-  @include mainFont;
-  @include gradient-1;
-  position        : relative;
-  text-decoration : none;
-  color           : $dark;
-  text-transform  : uppercase;
-  border-radius   : 2px;
-  padding         : 13px 25px;
-  min-width       : 204px;
-  text-align      : center;
-  font-weight     : 400;
-  overflow        : hidden;
+  @include titleFont;
+  position         : relative;
+  display          : flex;
+  justify-content  : center;
+  align-content    : center;
+  text-decoration  : none;
+  color            : $light;
+  text-transform   : uppercase;
+  border-radius    : 2px;
+  padding          : 14px 25px;
+  min-width        : 204px;
+  text-align       : center;
+  font-weight      : 400;
+  overflow         : hidden;
+  background-color : $dark;
+  align-self       : center;
 
   &:before {
 	position         : absolute;
 	content          : '';
-	left             : -6px;
+	left             : -20px;
 	top              : 0;
 	height           : 100%;
 	width            : 6px;
-	background-color : $color-3;
+	background-color : $color-2;
 	transition       : left .1s ease-in-out;
   }
   /*Bold Text*/
@@ -144,11 +148,14 @@ ul {
 	}
   }
 
-  /*White btn*/
   &.btn-1 {
 
   }
-
+  /*White btn*/
+  &.btn-2 {
+	background-color : $light;
+	color            : $dark;
+  }
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*Description List*/
@@ -176,5 +183,17 @@ dl {
 	  align-items     : center;
 	  text-align      : right;
 	}
+  }
+}
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*Onsorted List*/
+
+ol {
+  max-width : 100%;
+
+  li {
+	@include mainFont;
+	font-weight : normal;
+	word-break  : break-word;
   }
 }

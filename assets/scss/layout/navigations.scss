@@ -6,45 +6,45 @@ ul.mainMenu {
   list-style      : none;
 
   li {
-    position  : relative;
-    font-size : inherit;
-    padding   : 0.3rem;
-    @include fluid(margin-right, $min-screen, $max-screen, 8px, 50px);
-    &:last-of-type {
-      margin-right : 0;
-    }
-    &:after {
-      top        : 300px;
-      transition : top .4s ease-in;
-    }
+	position  : relative;
+	font-size : inherit;
+	padding   : 0.3rem;
+	@include fluid(margin-right, $min-screen, $max-screen, 8px, 50px);
+	&:last-of-type {
+	  margin-right : 0;
+	}
+	&:after {
+	  top        : 300px;
+	  transition : top .4s ease-in;
+	}
 
-    // -- hover
-    &:hover {
-      a {
-        color : #fff;
-      }
+	// -- hover
+	&:hover {
+	  a {
+		color : #fff;
+	  }
 
-      &:after {
-        position         : absolute;
-        left             : 0;
-        top              : 105%;
-        content          : '';
-        width            : 100%;
-        height           : 2px;
-        background-color : $light;
-        transition       : top .4s 2s ease-in;
+	  &:after {
+		position         : absolute;
+		left             : 0;
+		top              : 105%;
+		content          : '';
+		width            : 100%;
+		height           : 2px;
+		background-color : $light;
+		transition       : top .4s 2s ease-in;
 
-      }
-    }
-    // ----- end Hover
-    a {
-      @include headerFont;
-    }
-    &.current-menu-item {
-      a {
-        font-weight : 400;
-      }
-    }
+	  }
+	}
+	// ----- end Hover
+	a {
+	  @include headerFont;
+	}
+	&.current-menu-item {
+	  a {
+		font-weight : 400;
+	  }
+	}
   }
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -61,32 +61,32 @@ ul.mainMenu {
   @include fluid(top, $min-screen, $max-screen, 73px, 167px);
   transition       : all .6s ease-in;
   &.showme {
-    display    : block;
-    height     : auto;
-    transition : all .6s ease-in;
+	display    : block;
+	height     : auto;
+	transition : all .6s ease-in;
   }
   //  @Medium:  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   ul.mobileMenu {
-    display         : flex;
-    flex-flow       : column nowrap;
-    justify-content : left;
+	display         : flex;
+	flex-flow       : column nowrap;
+	justify-content : left;
 
-    li {
-      padding         : 0.8rem;
-      display         : flex;
-      flex-flow       : column nowrap;
-      justify-content : center;
-      justify-items   : center;
-      border-bottom   : 2px dot-dot-dash $dark;
-      a {
-        text-align      : center;
-        @include mainFont;
-        text-decoration : none;
-        font-size       : 1.3rem;
-        padding         : 0.8rem 0;
-        color           : $dark;
-      }
-    }
+	li {
+	  padding         : 0.8rem;
+	  display         : flex;
+	  flex-flow       : column nowrap;
+	  justify-content : center;
+	  justify-items   : center;
+	  border-bottom   : 2px dot-dot-dash $dark;
+	  a {
+		text-align      : center;
+		@include mainFont;
+		text-decoration : none;
+		font-size       : 1.3rem;
+		padding         : 0.8rem 0;
+		color           : $dark;
+	  }
+	}
   }
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -98,20 +98,24 @@ ul.footerMenu {
   justify-content : center;
 
   li {
-    margin-right : rem(68px);
-    &:last-of-type {
-      margin-right : 0;
-    }
-
-    a {
-      color           : $light;
-      @include fluid-type($min-screen, $max-screen, 14px, 16px);
-      font-family     : $main-font-family;
-      font-weight     : 300;
-      text-decoration : none;
-    }
+	margin-right : rem(25px);
+	&:last-of-type {
+	  margin-right : 0;
+	}
+	a {
+	  color           : $light;
+	  @include fluid-type($min-screen, $max-screen, 14px, 16px);
+	  font-family     : $main-font-family;
+	  font-weight     : 300;
+	  text-decoration : none;
+	}
+	&:hover {
+	  a {
+		text-decoration : underline;
+	  }
+	}
   }
   @include breakpoint(md) {
-      display: none !important;
+	display : none !important;
   }
 }

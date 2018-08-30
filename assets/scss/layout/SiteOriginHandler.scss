@@ -1,9 +1,12 @@
 // Global
-.panel-grid {
-  @include fluid(margin-bottom, $min-screen, $max-screen, 40px, 80px);
-  &:first-of-type, &:last-of-type, &:only-of-type {
-	margin-bottom : 0;
-  }
+#pg-8-1 {
+  min-height : calc(100vh - (130px + 430px));
+}
+#pg-8-2, #pg-8-3, #pg-8-4, #pg-8-5 {
+  @include fluid(margin-bottom, $min-screen, $max-screen, 60px, 168px);
+}
+#pg-8-6 {
+  @include fluid(margin-bottom, $min-screen, $max-screen, 60px, 30px);
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // welcomeBox
@@ -176,7 +179,7 @@
 
 	h2 {
 	  text-align    : left;
-	  @include fluid-type($min-screen, $max-screen, 26px, 26px);
+	  @include fluid-type($min-screen, $max-screen, $h2-mobile, 26px);
 	  margin-bottom : 5px !important;
 	}
 	p {
@@ -228,6 +231,14 @@
 		height     : 100%;
 		max-height : 150px;
 	  }
+	}
+	.text {
+	  padding : 0 $gap;
+	  h2, p {
+		text-align : center;
+
+	  }
+
 	}
   }
 }
@@ -321,9 +332,9 @@
 #package-section {
   @include gradient-4;
   @include GridLayout;
-  border-top    : 25px solid $color-5;
-  position      : relative;
-  margin-bottom : 128px + 34px;
+  border-top : 25px solid $color-5;
+  position   : relative;
+  @include fluid(margin-bottom, $min-screen, $max-screen, 10px, 200px);
 
   .wrap {
 	grid-row : 1 / span 2 !important;
@@ -513,6 +524,53 @@
   }
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*Call to Action*/
+#pg-8-7 {
+  @include GridLayout;
+
+  .callToAction-2 {
+	display         : flex;
+	align-items     : center;
+	justify-items   : center;
+	justify-content : center;
+	width           : 100%;
+
+	.text, .button {
+	  flex : 0 0 auto;
+	}
+	.text {
+	  padding-right : 2rem;
+	  border-right  : 1px solid rgba($dark, 0.2);
+	  p {
+		text-align : center;
+		@include fluid-type($min-screen, $max-screen, $p-mobile, 25px);
+		b {
+		  margin-top : 0.3rem;
+		}
+	  }
+	}
+	.button {
+	  padding-left : 2rem;
+	}
+  }
+
+  /*Medium*/
+  @include breakpoint(md) {
+	.callToAction-2 {
+	  flex-flow : column nowrap;
+
+	  .text, .button {
+		padding : 0;
+		border  : 0;
+	  }
+	  .button {
+		margin-top : 3rem;
+	  }
+
+	}
+  }
+}
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // /*Animation*/
 #DesignAndCodingIcon {
   @keyframes animationIcon-1 {
@@ -680,3 +738,44 @@
   animation-duration        : 3s;
 
 }
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*Datenschutz und Impressum*/
+
+.page-id-3, .page-id-12 {
+  strong {
+	@include mainFont;
+	font-weight : bold;
+	color       : $color-2;
+	margin      : 0.7rem 0 0.1rem 0;
+	display     : inline-block;
+  }
+
+}
+.page-id-3 {
+  .DatenschutzContainer {
+	@include GridLayout;
+	max-width : 100vw;
+
+	.content {
+	  width     : 100%;
+	  max-width : 80%;
+	  strong {
+
+	  }
+	}
+
+  }
+  @include breakpoint(lg) {
+	.DatenschutzContainer {
+	  .content {
+		max-width : initial;
+	  }
+	}
+  }
+}
+.page-id-12 {
+  .ImpressumContainer {
+	@include GridLayout;
+  }
+}
+

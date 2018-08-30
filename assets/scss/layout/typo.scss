@@ -1,29 +1,30 @@
+@import "mixins";
+@import "variablen";
 /*Typo Radio*/
-$base-font:18px;
-$radio: 1.618;
-
+$base-font : 16px;
+$radio-desktop : 1.1;
+$radio-mobile : 1.2;
 
 //screens
 $min-screen : 400px;
 $max-screen : 1200px;
 
 //font-size-mobile
-$mobile-radio:0.8;
-$h3-mobile : ($base-font*$radio)*$mobile-radio;
-$h2-mobile : ($base-font*$radio*2)*$mobile-radio;
-$h1-mobile : ($base-font*$radio*3)*$mobile-radio;
-$h4-mobile : ($base-font*$radio*0.7)*$mobile-radio;
+$h3-mobile : $base-font*$radio-mobile;
+$h2-mobile : $base-font*$radio-mobile*$radio-mobile;
+$h1-mobile : $base-font*$radio-mobile*$radio-mobile*$radio-mobile;
+$h4-mobile : $base-font*$radio-mobile*0.7;
 
 $p-mobile : $base-font;
 $small-mobile : 14px;
 
 // screen-size-screen
-$h1-screen : 39px;
-$h2-screen : 31px;
-$h3-screen : 20px;
-$h4-screen : 20px;
-$p-screen : 16px;
-$small-screen : 14px;
+$p-screen : $base-font;
+$h3-screen : $base-font*$radio-desktop;
+$h2-screen : $base-font*$radio-desktop*2;
+$h1-screen : $base-font*$radio-desktop*3;
+$h4-screen : ($base-font*$radio-desktop)-2px;
+$small-screen : ($base-font*$radio-desktop)-4px;
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 h1, h2, h3, h4 {
   text-rendering : optimizeLegibility;
@@ -31,14 +32,33 @@ h1, h2, h3, h4 {
 }
 h1 {
   @include mainFont;
-  //font-size   : rem(39px);
   @include fluid-type($min-screen, $max-screen, $h1-mobile, $h1-screen);
-  @include fluid(margin-bottom, $min-screen, $max-screen, 20px, 23px);
-  font-weight : 400;
-  line-height : 120%;
+  font-weight : 700;
+  @include fluid(line-height, $min-screen, $max-screen, 23px, 39px);
   text-align  : center;
-  color       : $light;
+  color       : $color-4;
+  @include fluid(margin-top, $min-screen, $max-screen, 20px, 54px);
+  @include fluid(margin-bottom, $min-screen, $max-screen, 30px, 70px);
 
+  small {
+	@include fluid-type($min-screen, $max-screen, 16px, 30px);
+	color       : $color-2;
+	font-weight : 300;
+	.color {
+	  color : $dark;
+	}
+  }
+
+  /*Startseite*/
+  body.home & {
+	line-height : 120%;
+	font-weight : 400;
+	color       : $light;
+	padding     : 0;
+	margin      : 0;
+	@include fluid(margin-bottom, $min-screen, $max-screen, 20px, 23px);
+  }
+  /*---------------------------------------------------------------------*/
   strong, b {
 	font-weight : 400;
 	color       : $color-5;
@@ -46,20 +66,35 @@ h1 {
   .header & {
 	text-shadow : rgba(0, 0, 0, 1) 0 2px 2px;
   }
+
+  .DatenschutzContainer &, .ImpressumContainer & {
+	color      : $color-5;
+	text-align : left;
+	@include fluid(margin-top, $min-screen, $max-screen, 30px, 80px);
+	@include fluid(margin-bottom, $min-screen, $max-screen, 30px, 80px);
+  }
+
 }
 h2 {
   @include fluid-type($min-screen, $max-screen, $h2-mobile, $h2-screen);
-  line-height : 140%;
-  font-family : $main-font-family;
-  color       : $dark;
-  font-weight : 500;
-  text-align  : center;
+  line-height    : 140%;
+  font-family    : $main-font-family;
+  color          : $dark;
+  font-weight    : 500;
+  text-align     : center;
+  text-transform : uppercase;
   @include fluid(margin-bottom, $min-screen, $max-screen, 30px, 60px);
+  position       : relative;
+  z-index        : 10;
 
+  &.sectionHeader {
+	-webkit-background-clip : text;
+	-webkit-text-fill-color : transparent;
+	background-image        : linear-gradient(180deg, #a045dc -20%, #5235b7 120%);
+  }
   &.left {
 	text-align : left;
   }
-
   #package-section .wrap > & {
 	color : $light;
 	@include fluid(margin-top, $min-screen, $max-screen, 50px, 72px);
@@ -71,6 +106,10 @@ h2 {
 	@include fluid(margin-bottom, $min-screen, $max-screen, 19px*0.7, 19px);
 	font-weight : 400;
   }
+  body.page-id-12 & {
+	text-align : left;
+	@include fluid(margin-bottom, $min-screen, $max-screen, 10px, 20px);
+  }
 }
 h3 {
   @include fluid-type($min-screen, $max-screen, $h3-mobile, $h3-screen);
@@ -79,7 +118,6 @@ h3 {
   color       : $color-2;
   font-weight : 500;
   text-align  : left;
-  color       : $color-2;
   @include fluid(margin-bottom, $min-screen, $max-screen, 5px, 12px);
 
   &:only-of-type {
