@@ -30,3 +30,10 @@
 .GridSection {
   @include GridLayout;
 }
+.section {
+  @include fluid(margin-bottom, $min-screen, $max-screen, 60px, 190px);
+
+  &:last-of-type {
+	margin-bottom : 0;
+  }
+}

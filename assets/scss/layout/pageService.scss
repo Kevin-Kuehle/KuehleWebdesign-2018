@@ -4,7 +4,11 @@
   .contentBox {
 	display               : grid;
 	grid-template-columns : repeat(3, 1fr);
+	grid-auto-rows        : 180px;
 	grid-gap              : 40px $gap;
+	height                : auto;
+	padding-bottom        : calc(100vh - 863px);
+	margin-bottom         : 50px;
 
 	.title {
 	  display       : flex;
@@ -55,6 +59,14 @@
 	  grid-template-columns : 1fr;
 	}
   }
+  @include breakpoint(lg) {
+	height : auto;
+
+	.contentBox {
+	  grid-auto-rows : auto;
+	}
+
+  }
 }
 .ServericePackageListContainer {
   width                 : 100%;
@@ -65,6 +77,8 @@
   background-size       : cover;
   background-attachment : scroll;
   background-repeat     : no-repeat;
+
+  overflow-x            : auto;
 
   .GridContainer {
 	@include GridLayout;
@@ -169,7 +183,7 @@
 	  }
 	}
 	@media (max-width : 770px) {
-	  overflow-x : overlay;
+
 	  .group, .packageTitleBar {
 		display               : Grid;
 		grid-template-columns : 290px repeat(3, 140px);
@@ -177,4 +191,121 @@
 	  }
 	}
   }
+}
+.section-CMS {
+  .content {
+	display   : flex;
+	flex-flow : column nowrap;
+
+	h3, p {
+	  align-self : center;
+	}
+	p {
+	  width     : 100%;
+	  max-width : rem(751px);
+	}
+  }
+}
+.section-GoogleAdwords {
+  .content {
+	display               : grid;
+	grid-gap              : 45px $gap;
+	grid-template-columns : repeat(2, 1fr);
+	grid-auto-columns     : 1fr;
+	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	@include breakpoint(md) {
+	  grid-template-columns : 1fr;
+	}
+  }
+}
+.sectionInfoBar {
+  display         : flex;
+  flex-flow       : row;
+  justify-items   : center;
+  justify-content : center;
+  margin-top      : -50px;
+
+  .bar {
+	background-color      : #e6b541;
+	padding               : 38px 32px;
+	width                 : 100%;
+	max-width             : 945px;
+
+	display               : grid;
+	grid-template-columns : 50px 1fr 50px;
+	grid-template-areas   : "icon text .";
+
+	span {
+	  @include mainFont;
+	  color       : black;
+	  font-weight : Bold;
+	  @include fluid-type($min-screen, $max-screen, 16px, 18px);
+	  text-align  : center;
+	  grid-area   : text;
+	  max-width   : 500px;
+	  margin      : 0 auto;
+	  &.icon {
+		grid-area    : icon;
+		background   : url(assets/images/icons/information.svg) no-repeat;
+		display      : inline-block;
+		height       : rem(53px);
+		width        : rem(53px);
+		margin-right : 40px;
+	  }
+	}
+  }
+  //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  @include breakpoint(md) {
+	.bar {
+	  grid-template-columns : 1fr;
+	  grid-template-rows    : auto auto;
+	  padding               : 1.5rem 0;
+	  grid-template-areas   : "icon" "text";
+
+	  span {
+		&.icon {
+		  margin  : 0 auto 1rem auto;
+		  padding : 0 0 1rem 0;
+
+		}
+	  }
+	}
+  }
+}
+.section-Support {
+  @include fluid(margin-bottom, $min-screen, $max-screen, 20px, 60px);
+  .content {
+	display               : grid;
+	grid-template-columns : repeat(12, 1fr);
+	grid-template-rows    : 100%;
+	grid-gap              : 25px 25px;
+	grid-template-areas   : ". . text text text text text text text text . .";
+
+	p {
+	  grid-area  : text;
+	  text-align : center;
+	}
+  }
+}
+.callToAction-3 {
+  .content {
+	display       : flex;
+	flex-flow     : column nowrap;
+	align-content : center;
+	align-items   : center;
+
+	.imageBox {
+	  display             : block;
+	  margin              : 0 auto;
+	  width               : 100%;
+	  max-width           : 872px;
+	  height              : 215px;
+
+	  background          : url("assets/images/backgrounds/codingImage.png") no-repeat;
+	  background-size     : 80% auto;
+	  background-position : center;
+
+	}
+  }
+
 }

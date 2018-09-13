@@ -1,5 +1,7 @@
 <?php
 require 'inc/ThemeSupport.php';
+/*Blocks*/
+require 'assets/blocks/myFirstBlock/wp_block_handler.php';
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Add Styles and Scrips
